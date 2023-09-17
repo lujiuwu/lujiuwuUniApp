@@ -1,17 +1,72 @@
 {
 	"pages": [{
-		"path": "pages/index/index",
-		"style": {
-			"navigationBarTitleText": "uni-app"
-		}
-	}],
+            "path" : "pages/mikuhome/mikuhome",
+            "style" :                                                                                    
+            {
+              
+            }
+            
+        }
+        ,{
+            "path" : "pages/mikucate/mikucate",
+            "style" :                                                                                    
+            {
+             
+            }
+            
+        }
+        ,{
+            "path" : "pages/mikucart/mikucart",
+            "style" :                                                                                    
+            {
+            }
+            
+        }
+        ,{
+            "path" : "pages/mikumy/mikumy",
+            "style" :                                                                                    
+            {
+            
+            }
+            
+        }
+    ],
 	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "uni-app",
-		"navigationBarBackgroundColor": "#F8F8F8",
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "鹿九巫",
+		"navigationBarBackgroundColor": "#20bbbd",
 		"backgroundColor": "#F8F8F8",
 		"app-plus": {
 			"background": "#efeff4"
 		}
+	},
+	"tabBar": {
+		"selectedColor": "#20bbbd",
+		"list": [
+			{
+				"pagePath": "pages/mikuhome/mikuhome",
+				"iconPath": "static/tab_icons/home.png",
+				"selectedIconPath": "static/tab_icons/home_active.png",
+				"text": "首页"
+			},
+			{
+				"pagePath": "pages/mikucate/mikucate",
+				"iconPath": "static/tab_icons/category.png",
+				"selectedIconPath": "static/tab_icons/category_active.png",
+				"text": "分类"
+			},
+			{
+				"pagePath": "pages/mikucart/mikucart",
+				"iconPath": "static/tab_icons/cart.png",
+				"selectedIconPath": "static/tab_icons/cart_active.png",
+				"text": "购物车"
+			},
+			{
+				"pagePath": "pages/mikumy/mikumy",
+				"iconPath": "static/tab_icons/my.png",
+				"selectedIconPath": "static/tab_icons/my_active.png",
+				"text": "我的"
+			}
+		]
 	}
 }
