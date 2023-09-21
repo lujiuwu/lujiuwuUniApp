@@ -5,7 +5,15 @@
     "pages/mikucart/mikucart",
     "pages/mikumy/mikumy"
   ],
-  "subPackages": [],
+  "subPackages": [
+    {
+      "root": "subpackage",
+      "pages": [
+        "miku_detail/miku_detail",
+        "miku_list/miku_list"
+      ]
+    }
+  ],
   "window": {
     "navigationBarTextStyle": "white",
     "navigationBarTitleText": "鹿九巫",

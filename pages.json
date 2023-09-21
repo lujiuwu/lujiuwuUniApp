@@ -31,6 +31,30 @@
             
         }
     ],
+	// 分包管理
+	"subPackages": [
+		// 一个分包的信息
+		{
+			"root": "subpackage",
+			"pages": [
+				{
+					"path": "miku_detail/miku_detail",
+					"style": {
+						
+					}
+				}
+			    ,{
+                    "path" : "miku_list/miku_list",
+                    "style" :                                                                                    
+                {
+                   
+                }
+                
+                }
+            ]
+		}
+		
+	],
 	"globalStyle": {
 		"navigationBarTextStyle": "white",
 		"navigationBarTitleText": "鹿九巫",
