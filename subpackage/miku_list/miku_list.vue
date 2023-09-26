@@ -8,8 +8,12 @@
 	export default {
 		data() {
 			return {
-				
+				params:""
 			};
+		},
+		// 获取跳转页面时传递的参数
+		onLoad:function(options){
+			this.params = options.id
 		}
 	}
 </script>

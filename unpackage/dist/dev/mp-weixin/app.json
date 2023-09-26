@@ -10,7 +10,8 @@
       "root": "subpackage",
       "pages": [
         "miku_detail/miku_detail",
-        "miku_list/miku_list"
+        "miku_list/miku_list",
+        "miku_search/miku_search"
       ]
     }
   ],

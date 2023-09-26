@@ -1,6 +1,10 @@
 <template>
 
 	<view>
+		<!-- 搜索框组件 -->
+		<view class="search_input">
+			<my-search></my-search>
+		</view>
 		<swiper :indicator-dots="true" :autoplay="true" :interval="3000" :duration="500" :circular="true">
 			<swiper-item v-for="(item,index) in swipers" :key="index">
 				<!-- 改造 -- 满足需求 -> 点击轮播图，跳转到商品详情页 -->
@@ -108,15 +112,6 @@
 						img2:"../../static/floor_images/floor23.png",
 						img3:"../../static/floor_images/floor24.jpg",
 						img4:"../../static/floor_images/floor25.jpg"
-					},
-					{
-						title:"好喜欢初音未来",
-						mainImg:"../../static/floor_images/floor31.jpg",
-						url:"/subpackage/miku_list/miku_list?floor=3",
-						img1:"../../static/floor_images/floor32.jpg",
-						img2:"../../static/floor_images/floor33.jpg",
-						img3:"../../static/floor_images/floor34.jpg",
-						img4:"../../static/floor_images/floor35.jpg"
 					}
 				]
 			};
@@ -134,6 +129,13 @@
 </script>
 
 <style lang="scss">
+	// 给搜索框设置吸睛效果 保证页面滚动时搜索框固定在顶部
+	.search_input{
+		position: sticky;
+		top: 0;
+		// 防止轮播图的覆盖
+		z-index: 999;
+	}
 swiper{
 	height: 220px;
 	image,.swiper-item{
