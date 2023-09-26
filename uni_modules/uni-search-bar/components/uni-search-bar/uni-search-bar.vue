@@ -80,11 +80,12 @@
 			},
 			cancelText: {
 				type: String,
-				default: '取消'
+				default: ""
 			},
 			bgColor: {
 				type: String,
-				default: "#F8F8F8"
+				//修改默认的背景颜色
+				default: "#fff"
 			},
 			maxlength: {
 				type: [Number, String],
@@ -108,9 +109,10 @@
 			}
 		},
 		data() {
+			// 跳转页面自动获取焦点
 			return {
-				show: false,
-				showSync: false,
+				show: true,
+				showSync: true,
 				searchVal: ''
 			}
 		},
@@ -226,7 +228,8 @@
 </script>
 
 <style lang="scss">
-	$uni-searchbar-height: 36px;
+	// 修改默认高度
+	$uni-searchbar-height: 40px;
 
 	.uni-searchbar {
 		/* #ifndef APP-NVUE */
@@ -235,7 +238,7 @@
 		flex-direction: row;
 		position: relative;
 		padding: 10px;
-		// background-color: #fff;
+		 background-color: #20bbbd;
 	}
 
 	.uni-searchbar__box {
@@ -267,7 +270,7 @@
 
 	.uni-searchbar__box-search-input {
 		flex: 1;
-		font-size: 14px;
+		font-size: 18px;
 		color: #333;
 	}
 
@@ -281,7 +284,7 @@
 	}
 
 	.uni-searchbar__text-placeholder {
-		font-size: 14px;
+		font-size: 18px;
 		color: #B3B3B3;
 		margin-left: 5px;
 	}

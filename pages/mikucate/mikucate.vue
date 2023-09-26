@@ -1,5 +1,8 @@
 <template>
 	<view>
+		<!-- 自定义和默认 -->
+		<!-- <my-search :bgColor="'#ccc'"></my-search> -->
+		<my-search @click = "gotoSearch"></my-search>
 		<view class="scroll_view">
 			<scroll-view scroll-y="true" class="leftArea" :style="{height:wh+'px'}">
 				<!-- 左侧的滚动视图区域 -->
@@ -20,7 +23,7 @@
 				</view>
 				<!-- 菜单内部 -->
 			<view class="body">
-				<view v-for="(item,index) in dataList.pictures" :key="index" class="picture" @click="gotoList(index)">
+				<view v-for="(item,index) in dataList.pictures1" :key="index" class="picture" @click="gotoList(index)">
 					<image :src="item.img" ></image>
 					<text>{{item.text}}</text>
 				</view>
@@ -30,7 +33,7 @@
 				{{dataList.header2}}
 			</view>
 			<view class="body">
-				<view v-for="(item,index) in dataList.pictures" :key="index" class="picture" @click="gotoList(index)">
+				<view v-for="(item,index) in dataList.pictures2" :key="index" class="picture" @click="gotoList(index)">
 					<image :src="item.img" ></image>
 					<text>{{item.text}}</text>
 				</view>
@@ -39,7 +42,7 @@
 				{{dataList.header2}}
 			</view>
 			<view class="body">
-				<view v-for="(item,index) in dataList.pictures" :key="index" class="picture" @click="gotoList(index)">
+				<view v-for="(item,index) in dataList.pictures3" :key="index" class="picture" @click="gotoList(index)">
 					<image :src="item.img" ></image>
 					<text>{{item.text}}</text>
 				</view>
@@ -51,7 +54,9 @@
 </template>
 
 <script>
+import { ssrContextKey } from "vue";
 	export default {
+	
 		data() {
 			return {
 				// 窗口高度
@@ -74,12 +79,6 @@
 					},
 					{
 						text:"fufu专区"
-					},
-					{
-						text:"周边专区"
-					},
-					{
-						text:"手书专区"
 					}
 					
 				],
@@ -91,19 +90,47 @@
 						// 副标题一
 						header1:"-一些音乐-",
 						header2:"-一些音乐-",
-						pictures:[
+						pictures1:[
+							{img:"../../static/floor_images/floor12.jpg",
+							text:"love miku1-1"},
+							{img:"../../static/floor_images/floor13.jpg",
+							text:"love miku1-2"},
+							{img:"../../static/floor_images/floor4.jpg",
+							text:"love miku1-1"},
+							{img:"../../static/floor_images/floor15.jpg",
+							text:"love miku1-2"},
 							{img:"../../static/right_images/pic1.png",
-							text:"love miku"},
+							text:"love miku1-1"},
 							{img:"../../static/right_images/pic2.png",
-							text:"love miku"},
-							{img:"../../static/right_images/pic3.png",
-							text:"love miku"},
-							{img:"../../static/right_images/pic4.png",
-							text:"love miku"},
-							{img:"../../static/right_images/pic5.png",
-							text:"love miku"},
-							{img:"../../static/right_images/pic6.png",
-							text:"love miku"}
+							text:"love miku1-2"}
+						],
+						pictures2:[
+							{img:"../../static/floor_images/floor12.jpg",
+							text:"love miku1-1"},
+							{img:"../../static/floor_images/floor13.jpg",
+							text:"love miku1-2"},
+							{img:"../../static/floor_images/floor4.jpg",
+							text:"love miku1-1"},
+							{img:"../../static/floor_images/floor15.jpg",
+							text:"love miku1-2"},
+							{img:"../../static/right_images/pic1.png",
+							text:"love miku1-1"},
+							{img:"../../static/right_images/pic2.png",
+							text:"love miku1-2"}
+						],
+						pictures3:[
+							{img:"../../static/floor_images/floor12.jpg",
+							text:"love miku1-1"},
+							{img:"../../static/floor_images/floor13.jpg",
+							text:"love miku1-2"},
+							{img:"../../static/floor_images/floor4.jpg",
+							text:"love miku1-1"},
+							{img:"../../static/floor_images/floor15.jpg",
+							text:"love miku1-2"},
+							{img:"../../static/right_images/pic1.png",
+							text:"love miku1-1"},
+							{img:"../../static/right_images/pic2.png",
+							text:"love miku1-2"}
 						]
 					},
 					{
@@ -112,20 +139,7 @@
 						// 副标题一
 						header1:"-一些专辑-",
 						header2:"-一些专辑-",
-						pictures:[
-							{img:"../../static/right_images/pic1.png",
-							text:"love miku"},
-							{img:"../../static/right_images/pic2.png",
-							text:"love miku"},
-							{img:"../../static/right_images/pic3.png",
-							text:"love miku"},
-							{img:"../../static/right_images/pic4.png",
-							text:"love miku"},
-							{img:"../../static/right_images/pic5.png",
-							text:"love miku"},
-							{img:"../../static/right_images/pic6.png",
-							text:"love miku"}
-						]
+						
 					},
 					{
 						// 大标题
@@ -133,14 +147,7 @@
 						// 副标题一
 						header1:"-一些服饰-",
 						header2:"-一些服饰-",
-						pictures:[
-							{img:"../../static/right_images/f1.jpg",
-							text:"love miku"},
-							{img:"../../static/right_images/f2.jpg",
-							text:"love miku"},
-							{img:"../../static/right_images/f3.jpg",
-							text:"love miku"}
-						]
+						
 					},
 					{
 						// 大标题
@@ -148,20 +155,7 @@
 						// 副标题一
 						header1:"-一些术曲-",
 						header2:"-一些术曲-",
-						pictures:[
-							{img:"../../static/right_images/pic1.png",
-							text:"love miku"},
-							{img:"../../static/right_images/pic2.png",
-							text:"love miku"},
-							{img:"../../static/right_images/pic3.png",
-							text:"love miku"},
-							{img:"../../static/right_images/pic4.png",
-							text:"love miku"},
-							{img:"../../static/right_images/pic5.png",
-							text:"love miku"},
-							{img:"../../static/right_images/pic6.png",
-							text:"love miku"}
-						]
+					
 					},
 				{
 					// 大标题
@@ -169,75 +163,21 @@
 					// 副标题一
 					header1:"-一些fufu-",
 					header2:"-一些fufu-",
-					pictures:[
-						{img:"../../static/right_images/pic1.png",
-						text:"love miku"},
-						{img:"../../static/right_images/pic2.png",
-						text:"love miku"},
-						{img:"../../static/right_images/pic3.png",
-						text:"love miku"},
-						{img:"../../static/right_images/pic4.png",
-						text:"love miku"},
-						{img:"../../static/right_images/pic5.png",
-						text:"love miku"},
-						{img:"../../static/right_images/pic6.png",
-						text:"love miku"}
-					]
-				},
-					{
-						// 大标题
-					    title:"/买点大米/",
-						// 副标题一
-						header1:"-一些周边-",
-						header2:"-一些周边-",
-						pictures:[
-							{img:"../../static/right_images/pic1.png",
-							text:"love miku"},
-							{img:"../../static/right_images/pic2.png",
-							text:"love miku"},
-							{img:"../../static/right_images/pic3.png",
-							text:"love miku"},
-							{img:"../../static/right_images/pic4.png",
-							text:"love miku"},
-							{img:"../../static/right_images/pic5.png",
-							text:"love miku"},
-							{img:"../../static/right_images/pic6.png",
-							text:"love miku"}
-						]
-					},
-					{
-						// 大标题
-					    title:"/循环播放/",
-						// 副标题一
-						header1:"-一些手书-",
-						header2:"-一些手书-",
-						pictures:[
-							{img:"../../static/right_images/pic1.png",
-							text:"love miku"},
-							{img:"../../static/right_images/pic2.png",
-							text:"love miku"},
-							{img:"../../static/right_images/pic3.png",
-							text:"love miku"},
-							{img:"../../static/right_images/pic4.png",
-							text:"love miku"},
-							{img:"../../static/right_images/pic5.png",
-							text:"love miku"},
-							{img:"../../static/right_images/pic6.png",
-							text:"love miku"}
-						]
-					}
 					
+				}
 				],
 				// 更新数据
 				dataList:{},
 		        // 切换页面时，滚动条自动置顶
-				scrollTop:0
+				scrollTop:0,
+				
 			};
 		},
 		onLoad() {
 			// 一开始就设置可用窗口的高度
 			const sysInfo = uni.getSystemInfoSync()
-			this.wh = sysInfo.windowHeight
+			// 为了防止搜索框出现bug 可用的窗口高度还应该减去搜索框的高度
+			this.wh = sysInfo.windowHeight - 40
 			this.dataList = this.order[0]
 		},
 		methods:{
@@ -256,6 +196,14 @@
 				// 跳转到商品详情页面
 				uni.navigateTo({
 					url:'/subpackage/miku_list/miku_list?id='+id
+				})
+			},
+			// 传入到搜索组件的事件
+			gotoSearch(){
+				//  作为测试 - console.log("go to search")
+				// 跳转到指定页面
+				uni.navigateTo({
+					url:"/subpackage/miku_search/miku_search"
 				})
 			}
 		}
@@ -296,6 +244,9 @@
 				width: 100%;
 				height: 86%;
 			}
+			text{
+				font-size: 12px;
+			}
 		}
 	}
   }
@@ -304,7 +255,6 @@
 	  flex:8;
 	  .left_view_item{
 		  line-height: 60px;
-		   border-bottom: 1px solid #b5dcde;
 		  text-align: center;
 		  &.active{
 			background-color: #eee;

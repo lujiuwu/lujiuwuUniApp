@@ -1,6 +1,6 @@
 <template>
 	<view>
-		this is pagckage page
+		this is detail page for goods{{id}}
 	</view>
 </template>
 
@@ -8,8 +8,12 @@
 	export default {
 		data() {
 			return {
-				
+				id:""
 			};
+		},
+		// 获取页面参数
+		onLoad(options) {
+			this.id = options.id
 		}
 	}
 </script>

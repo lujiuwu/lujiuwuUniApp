@@ -47,7 +47,20 @@
                     "path" : "miku_list/miku_list",
                     "style" :                                                                                    
                 {
-                   
+                   // 设置上拉触底的触发距离
+				   "onReachBottomDistance": 150,
+				   // 开启上拉刷新
+				   "enablePullDownRefresh": true,
+				   // 上拉刷新时的背景颜色
+				   "backgroundColor": "#F8F8F8"
+                }
+                
+                }
+                ,{
+                    "path" : "miku_search/miku_search",
+                    "style" :                                                                                    
+                {
+                  
                 }
                 
                 }
