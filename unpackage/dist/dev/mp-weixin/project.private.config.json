@@ -3,5 +3,18 @@
     "projectname": "lujiuwu",
     "setting": {
         "compileHotReLoad": true
+    },
+    "condition": {
+        "miniprogram": {
+            "list": [
+                {
+                    "name": "",
+                    "pathName": "subpackage/miku_detail/miku_detail",
+                    "query": "id=456",
+                    "launchMode": "default",
+                    "scene": null
+                }
+            ]
+        }
     }
 }
