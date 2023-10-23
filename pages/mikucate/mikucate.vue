@@ -55,8 +55,10 @@
 
 <script>
 import { ssrContextKey } from "vue";
+// 引入tabbar-badge
+	import tabbarMix from '../../mixins/tabbar-badge.js'
 	export default {
-	
+	    mixins:[tabbarMix],
 		data() {
 			return {
 				// 窗口高度
@@ -66,7 +68,7 @@ import { ssrContextKey } from "vue";
 				// 菜单栏数据
 				list:[
 					{
-						text:"音乐专区"
+						text:"123专区" 
 					},
 					{
 						text:"专辑专区"
@@ -195,7 +197,7 @@ import { ssrContextKey } from "vue";
 			gotoList(id){
 				// 跳转到商品详情页面
 				uni.navigateTo({
-					url:'/subpackage/miku_list/miku_list?id='+id
+					url:'/subpackage/miku_detail/miku_detail?id='+id
 				})
 			},
 			// 传入到搜索组件的事件

@@ -72,7 +72,7 @@
 				text{
 					font-size: 20px;
 					font-weight: bold;
-					color:#3c8777
+					color:#3c8777;
 				}
 			}
 			.tags{

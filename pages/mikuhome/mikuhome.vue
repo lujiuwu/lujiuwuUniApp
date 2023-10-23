@@ -9,7 +9,7 @@
 			<swiper-item v-for="(item,index) in swipers" :key="index">
 				<!-- 改造 -- 满足需求 -> 点击轮播图，跳转到商品详情页 -->
 				<!-- 进阶 --在跳转的同时要传递轮播图索引 -->
-				<navigator class="swiper-item" :url="'/subpackage/miku_detail/miku_detail?miku_id='+item.miku_id">
+				<navigator class="swiper-item" :url="'/subpackage/miku_detail/miku_detail?id='+item.miku_id">
 					<image :src="item.img_url"></image>
 				</navigator>
 			</swiper-item>
@@ -47,7 +47,10 @@
 </template>
 
 <script>
+	// 引入tabbar-badge
+	import tabbarMix from '../../mixins/tabbar-badge.js'
 	export default {
+		mixins:[tabbarMix],
 		data() {
 			return {
 				// 轮播图数据数组
